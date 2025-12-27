@@ -5,8 +5,9 @@ class ShoppingCart:
         self.discount_applied = 0.0
 
     def add_item(self, name: str, price: float, qty: int):
-        # BUG 1: No check for negative quantity! 
-        # A hacker could add -1 iPhone to reduce total price.
+        if qty < 0:
+            return
+
         self.items[name] = price
         self.quantities[name] = self.quantities.get(name, 0) + qty
 
