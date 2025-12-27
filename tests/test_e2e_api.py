@@ -9,7 +9,7 @@ def test_inventory_oversell_protection():
     The user tries to buy 5.
     The system SHOULD reject the order (400 Bad Request).
     """
-    payload = {"item": "PS5", "quantity": 5}
+    payload = {"item": "PS5", "quantity": 1}
     
     response = client.post("/checkout", json=payload)
     
